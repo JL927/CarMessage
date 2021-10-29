@@ -5,7 +5,7 @@ import java.sql.*;
 public class AdminUpdate {
     public void AdminQuery(String s){
         Connection con=null;
-        PreparedStatement sta=null;
+        Statement sta=null;
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -15,11 +15,10 @@ public class AdminUpdate {
                     "admin",
                     "12345"
             );
-            String sql="select ? from car;";
-            sta=con.prepareStatement(sql);
-            sta.setString(1,s);
+            String sql="select * from car;";
+            sta=con.createStatement();
 
-            ResultSet resultSet = sta.executeQuery();
+            ResultSet resultSet = sta.executeQuery(sql);
             if(resultSet.next()){
                 if(s.equals("*")){
                     do{

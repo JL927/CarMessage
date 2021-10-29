@@ -164,7 +164,7 @@ public class Login {
             //查询，修改
             //查询，输入想要查询的内容
 
-            new AdminUpdate().AdminQuery("*");
+            new AdminUpdate().AdminQuery("license");
         }else {
             System.out.println("error pw!");
         }
