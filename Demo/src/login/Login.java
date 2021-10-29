@@ -161,10 +161,14 @@ public class Login {
         String password=sc.next();
 
         if(password.equals("12345")){
-            //查询，修改
-            //查询，输入想要查询的内容
-
-            new AdminUpdate().AdminQuery("license");
+            //查询，输入想要查询的内容,如果查询所以，则输入"*"
+            //new AdminUpdate().AdminQuery("license");
+            //查询城市
+            //new AdminUpdate().AdminQueryCity("南京");
+            //修改违章信息
+            new AdminUpdate().AdminUpdateVio(444444,"不系安全带");
+            //添加一条记录
+            //new AdminUpdate().AdminInsert(444444,"苏A54321",1,"benz");
         }else {
             System.out.println("error pw!");
         }
