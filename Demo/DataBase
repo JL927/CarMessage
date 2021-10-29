@@ -1,0 +1,32 @@
+create table car
+(
+    engine_id   int         not null,
+    license     varchar(10) not null,
+    violation   text        null,
+    cityid      int         not null,
+    driver_name varchar(10) null,
+    model       varchar(10) not null,
+    constraint car_engine_id_uindex
+        unique (engine_id),
+    constraint car___city
+        foreign key (cityid) references city (city_id)
+);
+
+alter table car
+    add primary key (engine_id);
+
+create table city
+(
+    city_id   int auto_increment
+        primary key,
+    city_name varchar(10) not null
+);
+
+
+create table driver
+(
+    driver_id   int auto_increment
+        primary key,
+    name        varchar(10)             not null,
+    car_license varchar(10) default '无' null
+);
